@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>branding Designs Co.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for cursor and animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            cursor: none; /* Hide the default cursor */
+        }
+
+        /* Custom Cursor Styles */
+        .cursor-dot, .cursor-outline {
+            pointer-events: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #8ee546;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #8ee546;
+        }
+        
+        /* Cursor grow effect on hover */
+        .cursor-grow .cursor-outline {
+            transform: translate(-50%, -50%) scale(1.5);
+            background-color: rgba(79, 70, 229, 0.1);
+        }
+        .cursor-grow .cursor-dot {
+             transform: translate(-50%, -50%) scale(0.75);
+        }
+
+        /* Card animation */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="container mx-auto px-6 py-8">
+
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-16 md:mb-24">
+            <div class="text-2xl font-bold tracking-tighter cursor-pointer">Branding bhartiya</div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="#services" class="hover:text-indigo-600 transition-colors">Services</a>
+                <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
+            </nav>
+            <button class="hidden md:block bg-indigo-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all" style="background-color: #66a830;">Get Started</button>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="text-center mb-24 md:mb-32 fade-in-section">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Crafting Digital <br>Experiences that Inspire</h1>
+            <p class="max-w-2xl mx-auto text-lg text-gray-600 mb-8">We are a creative studio focused on building beautiful, functional, and user-centric websites and brands.</p>
+            <button class="text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all text-lg" style="background-color: #8ee546;">View Our Work</button>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="mb-24 md:mb-32 fade-in-section">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=branding+Vibes" alt="Abstract design image" class="rounded-2xl shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">Who We Are</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        branding Designs Co. is a passionate team of designers, developers, and strategists. We believe in the power of thoughtful design to solve problems, tell stories, and connect with audiences. Our approach is collaborative, transparent, and always focused on delivering excellence. We don't just build websites; we build relationships.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="mb-24 md:mb-32 fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold">Our Services</h2>
+                <p class="text-gray-600 mt-2">What we can do for you.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md cursor-pointer">
+                    <h3 class="text-2xl font-semibold mb-3">Web Design & Development</h3>
+                    <p class="text-gray-500">Creating stunning, responsive, and high-performing websites from scratch.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md cursor-pointer">
+                    <h3 class="text-2xl font-semibold mb-3">Branding & Identity</h3>
+                    <p class="text-gray-500">Building memorable brands with a strong visual identity and compelling story.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md cursor-pointer">
+                    <h3 class="text-2xl font-semibold mb-3">UX/UI Design</h3>
+                    <p class="text-gray-500">Designing intuitive and engaging user interfaces that people love to use.</p>
+                </div>
+            </div>   </section>
+            </div>
+            <div class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8" >
+              <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt class="text-base/7 text-gray-600">Transactions every 24 hours</dt>
+                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">44 million</dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt class="text-base/7 text-gray-600">Assets under holding</dt>
+                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">$119 trillion</dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt class="text-base/7 text-gray-600">New users annually</dt>
+                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">46,000</dd>
+                </div>
+              </dl>
+            </div>
+     
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center bg-white p-12 md:p-20 rounded-3xl shadow-lg fade-in-section">
+            <h2 class="text-4xl font-bold mb-4">Have a project in mind?</h2>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Let's talk about how we can help you achieve your goals. We'd love to hear from you.</p>
+            <button class="bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-700 transition-all text-lg">hello@brandingdesigns.co</button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 mt-16 py-6 border-t border-gray-200">
+            &copy; 2024 branding Designs Co. All Rights Reserved.
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+            let mouseX = 0, mouseY = 0;
+            let posX = 0, posY = 0;
+
+            // Show cursor once it's moved
+            document.addEventListener('mousemove', e => {
+                cursorDot.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            
+            // Animate cursor to follow mouse
+            const animateCursor = () => {
+                posX += (mouseX - posX) * 0.1;
+                posY += (mouseY - posY) * 0.1;
+
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+                cursorOutline.style.left = `${posX}px`;
+                cursorOutline.style.top = `${posY}px`;
+
+                requestAnimationFrame(animateCursor);
+            };
+            animateCursor();
+
+            // Add grow effect to cursor on hover
+            const interactiveElements = document.querySelectorAll('a, button, .service-card, .cursor-pointer');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    document.body.classList.add('cursor-grow');
+                });
+                el.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('cursor-grow');
+                });
+            });
+
+            // Fade-in animation for sections on scroll
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
